@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles.css'
+import { Routes, Route } from 'react-router-dom'
+import Home from './Components/Home'
+//import Historial from './Components/Historial'
+import Header from './Components/Header'
+import Register from './Components/Register'
+import Login from './Components/Login'
+import PrivateRoute from './Components/Auth/PrivateRoute'
+import Product from './Components/Product'
+import Carrito from './Components/Carrito'
+//import Products from './pages/Productsreviso.jsx';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route element={<PrivateRoute />}>
+          <Route path='/product' element={<Product />} />
+        </Route>
+        <Route path='/registro' element={<Register />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/carrito' element={<Carrito />} />
+      </Routes>
+    </>
+  )
 }
 
-export default App;
+export default App

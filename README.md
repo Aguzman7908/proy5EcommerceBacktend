@@ -1,3 +1,12 @@
+Client
+Descripcion
+Antes se debe de posicionar en la carpeta de client.
+Este repositorio/proyecto se conecta al backend
+
+Se levanta el proyecto con
+
+npm start
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
