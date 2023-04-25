@@ -3,7 +3,7 @@ import productAxios from '../config/axios'
 export const ProductContext = createContext()
 
 export const ProductProvider = ({ children }) => {
-  //const [newProduct, setNewProduct] = useState()
+  const [newProduct, setNewProduct] = useState()
   const [product, setProduct] = useState([])
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false)
@@ -19,13 +19,23 @@ export const ProductProvider = ({ children }) => {
   }
 
   
+  const getProductInd = async (sku) => {
+    try {
+      const res = await productAxios.get(`/product/${sku}`, sku)
+      setNewProduct(res.data.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
   const data = {
     
     getProduct,
+    getProductInd,
     product,
     setProduct,
-    //newProduct,
-    //setNewProduct,
+    newProduct,
+    setNewProduct,
     success,
     error,
     setSuccess,

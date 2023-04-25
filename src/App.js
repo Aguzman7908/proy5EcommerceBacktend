@@ -8,6 +8,8 @@ import Login from './Components/Login'
 import PrivateRoute from './Components/Auth/PrivateRoute'
 import Product from './Components/Product'
 import Carrito from './Components/Carrito'
+import Individual from './Components/Individual'
+
 //import Products from './pages/Productsreviso.jsx';
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
         <Route path='/registro' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/carrito' element={<Carrito />} />
+        <Route path='/individual/:id' element={<Individual />} />
       </Routes>
     </>
   )

@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 //import BootstrapTable from 'react-bootstrap-table-next'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { ProductContext } from '../context/productContext'
 import { Button } from 'react-bootstrap';
 import '../App.css';
@@ -9,6 +9,8 @@ import {createItem, readItems} from '../utils/cart'
 
 export default function Product() {
   const { getProduct, product } = useContext(ProductContext)
+ 
+
 
   useEffect(() => {
     getProduct()
@@ -49,6 +51,7 @@ export default function Product() {
 
 
 const ProductDetail = ({ description, price, sku,image }) => { 
+  const navigate = useNavigate();
   function handleClick(){
     createItem ({ description, price, sku,image })
   }
@@ -61,8 +64,8 @@ const ProductDetail = ({ description, price, sku,image }) => {
         <h3><p>{sku}</p></h3>
         <p><span>{price}</span></p>
         <p>{description}</p>
-        <p><img src={image} alt="" title class="animate__animated animate__bounce"/></p><br></br>
-        <p><button  onClick={() => handleClick()} className="btn-transparent outline">Agregar a tu Carrito</button></p><br></br>
+        <p><img src={image} onClick={() => navigate(`/individual/${sku}`)} alt="" title class="animate__animated animate__bounce"/></p><br></br>
+        <p><button  onClick={() => handleClick()} className="btn-transparent outline">Agrega al carrito</button></p><br></br>
         
         </div>
     )

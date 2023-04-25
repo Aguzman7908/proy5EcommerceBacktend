@@ -10,6 +10,7 @@ import {createItem, readItems, parseStorage} from '../utils/cart'
 
 import PaypalButton from './PaypalButton'
 import {Product} from './Product'
+import {Invidual} from './Individual'
 
 
 
