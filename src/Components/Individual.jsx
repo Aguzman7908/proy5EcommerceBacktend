@@ -62,7 +62,7 @@ export default function Individual() {
 
 const ProductDetail = ({ description, price, sku, image }) => { 
   function handleClick(){
-    readItems ({ description, price, sku, image })
+    createItem ({ description, price, sku, image })
   }
   return (
       
