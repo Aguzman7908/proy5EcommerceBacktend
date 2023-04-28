@@ -16,7 +16,7 @@ export default function Individual() {
 
 
   useEffect(() => {
-    getProductInd()
+    getProductInd(sku)
      //newProduct(sku)
     
   }, [])
