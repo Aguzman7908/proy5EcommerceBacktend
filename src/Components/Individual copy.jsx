@@ -10,7 +10,7 @@ import Product from './Product';
 
 
 export default function Individual() {
-  const { getProductInd, newProduct, indpro } = useContext(ProductContext)
+  const { getProductInd, newProduct } = useContext(ProductContext)
   const sku = useParams()
 
 
@@ -39,24 +39,21 @@ export default function Individual() {
     })
   }
 
-  
 
   return (
-    <>
-       
+   <>
+      
+          
+           <div className="content">
+             <ProductDetail description={getProductInd?.description} price={`$ ${getProductInd?.price}`} sku={getProductInd?.sku} image={getProductInd?.image} />
+           </div>
            
-            <div className="content">
-              <ProductDetail description={getProductInd?.description} price={`$ ${getProductInd?.price}`} sku={getProductInd?.sku} image={getProductInd?.image} />
-            </div>
-            
-     
-     </>
-   );
- 
-}
+    
+    </>
+  );
 
   
-
+}
 
 
 

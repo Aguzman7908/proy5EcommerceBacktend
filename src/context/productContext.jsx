@@ -21,13 +21,15 @@ export const ProductProvider = ({ children }) => {
   
   const getProductInd = async (sku) => {
     try {
-      const res = await productAxios.get(`/product/${sku}`, sku)
+      const res = await productAxios.get(`/product/${sku}`)
       setNewProduct(res.data.data)
     } catch (error) {
       console.log(error)
     }
   }
   
+  
+ 
   const data = {
     
     getProduct,

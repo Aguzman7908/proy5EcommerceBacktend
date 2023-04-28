@@ -24,7 +24,7 @@ function App() {
         <Route path='/registro' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/carrito' element={<Carrito />} />
-        <Route path='/individual/:id' element={<Individual />} />
+        <Route path='/individual/:sku' element={<Individual />} />
       </Routes>
     </>
   )

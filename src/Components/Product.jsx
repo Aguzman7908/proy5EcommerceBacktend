@@ -31,7 +31,7 @@ export default function Product() {
     })
   }
   
-
+  
   console.log(product);
   
   return (
