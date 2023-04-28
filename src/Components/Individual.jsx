@@ -11,12 +11,12 @@ import Product from './Product';
 
 export default function Individual() {
   const { getProductInd, newProduct, indpro } = useContext(ProductContext)
-  const sku = useParams()
+  const {sku} = useParams()
 
 
 
   useEffect(() => {
-    getProductInd(sku)
+    getProductInd()
      //newProduct(sku)
     
   }, [])
@@ -25,13 +25,13 @@ export default function Individual() {
   console.log('SKU2:', {sku});
   
   const data = () => {
-    return getProductInd.map((sku) => {
+    return getProductInd.map((item) => {
       
 
       return {
-        description: sku.description,
-        price: `$ ${sku.price}`,
-        sku: sku.sku,
+        description: item.description,
+        price: `$ ${item.price}`,
+        sku: item.sku,
         
        
       }
