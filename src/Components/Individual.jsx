@@ -46,7 +46,7 @@ export default function Individual() {
        
            
             <div className="content">
-              <ProductDetail description={getProductInd?.description} price={`$ ${getProductInd?.price}`} sku={getProductInd?.sku} image={getProductInd?.image} />
+              <ProductDetail description={newProduct?.description} price={`$ ${newProduct?.price}`} sku={newProduct?.sku} image={newProduct?.image} />
             </div>
             
      
@@ -71,10 +71,10 @@ const ProductDetail = ({ description, price, sku, image }) => {
       <div className="content">
         <p></p>
         
-        <h3><p>{sku}Hola1</p></h3>
-        <p><span>{price}Hola2</span></p>
-        <p>{description}Hola3</p>
-        <p><img src={image} alt="" title class="animate__animated animate__bounce"/>Hola4</p><br></br>
+        <h3><p>{sku}</p></h3>
+        <p><span>{price}</span></p>
+        <p>{description}</p>
+        <p><img src={image} alt="" title class="animate__animated animate__bounce"/></p><br></br>
         <p><button  onClick={() => handleClick()} className="btn-transparent outline">Agregar Comidita</button></p><br></br>
         
         </div>
